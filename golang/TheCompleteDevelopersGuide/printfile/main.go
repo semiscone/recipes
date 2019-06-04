@@ -6,17 +6,21 @@ import (
 	"os"
 )
 
-type logWriter struct{}
+type fileWriter struct{}
 
 func main() {
-	fileName := os.Args[1]
+	f, err := os.Open(os.Args[1])
+	if err != nil {
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
 
-	file, _ := os.Open(fileName)
-	lw := logWriter{}
-	io.Copy(lw, file)
+	// io.Copy(os.Stdout, f)
+	fw := fileWriter{}
+	io.Copy(fw, f)
 }
 
-func (logWriter) Write(bs []byte) (int, error) {
+func (fileWriter) Write(bs []byte) (int, error) {
 	fmt.Println(string(bs))
 	fmt.Println("File length:", len(bs))
 
