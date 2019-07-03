@@ -9,7 +9,6 @@ spec:
   # or maybe external users to connect to (eg browser)
   selector:
     app: saletracker
-    release: "0.1"
 
   ports:
     - name: http
