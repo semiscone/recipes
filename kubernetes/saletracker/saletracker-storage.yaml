@@ -4,7 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: saletracker-pvc
 spec:
-  storageClassName: mylocalstorage
+  storageClassName: saletracker-storage-class
   accessModes:
     - ReadWriteOnce
   resources:
@@ -17,7 +17,7 @@ kind: PersistentVolume
 metadata:
   name: saletracker-storage
 spec:
-  storageClassName: mylocalstorage
+  storageClassName: saletracker-storage-class
   capacity:
     storage: 2Gi
   accessModes:
