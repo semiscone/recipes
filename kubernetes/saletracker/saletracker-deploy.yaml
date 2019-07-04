@@ -25,7 +25,5 @@ spec:
             mountPath: /var/data
       volumes:
         - name: saletracker-persistent-storage
-          hostPath:
-            path: /var/data/saletracker
-            type: DirectoryOrCreate
-
+          persistentVolumeClaim:
+            claimName: saletracker-pvc
