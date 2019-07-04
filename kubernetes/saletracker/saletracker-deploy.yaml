@@ -16,3 +16,16 @@ spec:
       containers:
       - name: saletracker
         image: semiscone/saletracker
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        volumeMounts:
+          - name: saletracker-persistent-storage
+            mountPath: /var/data
+      volumes:
+        - name: saletracker-persistent-storage
+          hostPath:
+            path: /var/data/
+            type: DirectoryOrCreate
+
