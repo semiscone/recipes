@@ -26,6 +26,6 @@ spec:
       volumes:
         - name: saletracker-persistent-storage
           hostPath:
-            path: /var/data/
+            path: /var/data/saletracker
             type: DirectoryOrCreate
 
