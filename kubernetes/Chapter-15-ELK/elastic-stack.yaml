@@ -226,9 +226,6 @@ spec:
         - containerPort: 9300
           name: transport
           protocol: TCP
-        volumeMounts:
-        - name: elasticsearch-logging
-          mountPath: /data
         env:
         - name: "NAMESPACE"
           valueFrom:
@@ -243,15 +240,6 @@ spec:
         name: elasticsearch-logging-init
         securityContext:
           privileged: true
-  volumeClaimTemplates:
-  - metadata:
-      name: elasticsearch-logging
-    spec:
-      storageClassName: cloud-ssd
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 31Gi
 ---
 
 #
@@ -314,4 +302,4 @@ spec:
     targetPort: ui
   selector:
     k8s-app: kibana-logging
-  type: LoadBalancer
+  type: NodePort
