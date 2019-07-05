@@ -16,6 +16,10 @@ spec:
       containers:
       - name: queue
         image: richardchesterwood/k8s-fleetman-queue:release1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -37,6 +41,10 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
 
 ---
 apiVersion: apps/v1
@@ -85,6 +93,10 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
 
 ---
 apiVersion: apps/v1
@@ -107,5 +119,9 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
 
         
