@@ -6,7 +6,7 @@ metadata:
   name: public-routing-ingress
 spec:
   rules:
-  - host: zeroarm
+  - host: zeroarm.com
     http:
       paths: 
       - path: /
