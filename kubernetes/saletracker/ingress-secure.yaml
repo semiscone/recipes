@@ -3,7 +3,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: alithon-routing-ingress
+  name: secure-routing-ingress
   annotations:
     # type of authentication
     nginx.ingress.kubernetes.io/auth-type: basic
@@ -13,20 +13,6 @@ metadata:
     nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - semiscone'
 spec:
   rules:
-  - host: zeroarm
-    http:
-      paths: 
-      - path: /
-        backend:
-          serviceName: saletracker-service
-          servicePort: 80
-  - host: www.zeroarm.com
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: fleetman-webapp
-          servicePort: 80
   - host: queue.zeroarm.com
     http:
       paths:
