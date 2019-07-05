@@ -18,7 +18,7 @@ spec:
         image: richardchesterwood/k8s-fleetman-queue:release1
         resources:
           limits:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "50m"
 ---
 apiVersion: apps/v1
@@ -69,7 +69,7 @@ spec:
           value: production-microservice
         resources:
           limits:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "50m"
           
 ---
@@ -95,7 +95,7 @@ spec:
           value: production-microservice
         resources:
           limits:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "50m"
 
 ---
